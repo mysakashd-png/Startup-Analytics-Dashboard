@@ -6,17 +6,13 @@ from utils.charts import (
     regional_distribution
 )
 
-st.image("assets/logo.png", width=120)
-
-st.title("🚀 Startup Analytics Dashboard")
-
-# Page Configuration
 st.set_page_config(
-    page_title="🚀 Startup Analytics Dashboard",
-    page_icon="🚀",
+    page_title="Startup Analytics Dashboard",
+    page_icon="assets/logo.png",  # Logo in browser tab
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
 
 # Load Data
 df = load_data()
