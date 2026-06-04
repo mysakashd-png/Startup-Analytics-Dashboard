@@ -17,6 +17,12 @@ st.set_page_config(
 # Load Data
 df = load_data()
 
+# Sidebar Logo
+st.sidebar.image(
+    "assets/logo.png",
+    width=180
+)
+
 # Header
 st.title("🚀 Startup Analytics Dashboard")
 st.markdown(
