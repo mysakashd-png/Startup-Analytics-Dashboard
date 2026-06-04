@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from utils.load_data import load_data
 from utils.charts import (
@@ -7,11 +8,11 @@ from utils.charts import (
 )
 
 # -----------------------------
-# Page Configuration
+# Configuration
 # -----------------------------
 st.set_page_config(
     page_title="Startup Analytics Dashboard",
-    page_icon="assets/logo.png",
+    page_icon="🚀",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -40,10 +41,18 @@ h1 {
 df = load_data()
 
 # -----------------------------
-# Sidebar
+# Logo Handling
 # -----------------------------
-st.sidebar.image("assets/logo.png", width=180)
+logo_path = "assets/logo.png"
 
+# Sidebar
+if os.path.exists(logo_path):
+    try:
+        st.sidebar.image(logo_path, width=180)
+    except Exception:
+        st.sidebar.markdown("### 🚀 Startup Analytics Dashboard")
+
+# Sidebar Navigation
 st.sidebar.title("Navigation")
 
 st.sidebar.success("""
@@ -67,8 +76,7 @@ st.sidebar.info("""
 
 🚀 Startup Analytics Dashboard
 
-Built using:
-
+Built with:
 - Python
 - Pandas
 - Plotly
@@ -80,26 +88,40 @@ Developer: Akash D
 # -----------------------------
 # Header Section
 # -----------------------------
-col1, col2 = st.columns([1, 5])
+if os.path.exists(logo_path):
+    try:
+        col1, col2 = st.columns([1, 5])
 
-with col1:
-    st.image("assets/logo.png", width=120)
+        with col1:
+            st.image(logo_path, width=120)
 
-with col2:
+        with col2:
+            st.title("🚀 Startup Analytics Dashboard")
+            st.caption("Startup Intelligence Platform")
+
+    except Exception:
+        st.title("🚀 Startup Analytics Dashboard")
+        st.caption("Startup Intelligence Platform")
+
+else:
     st.title("🚀 Startup Analytics Dashboard")
     st.caption("Startup Intelligence Platform")
 
+# -----------------------------
+# Introduction
+# -----------------------------
 st.markdown("""
 Welcome to the Startup Intelligence Platform.
 
-Analyze startup funding, valuation, revenue, profitability,
-and regional trends using interactive visualizations.
+Analyze startup funding, valuation, revenue,
+profitability, and regional trends using
+interactive visualizations.
 """)
 
 st.divider()
 
 # -----------------------------
-# KPI Section
+# KPI Cards
 # -----------------------------
 st.subheader("📊 Executive Summary")
 
@@ -132,7 +154,7 @@ with col4:
 st.divider()
 
 # -----------------------------
-# Charts Section
+# Charts
 # -----------------------------
 col1, col2 = st.columns(2)
 
