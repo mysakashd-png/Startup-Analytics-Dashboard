@@ -7,6 +7,13 @@ from utils.charts import (
     regional_distribution
 )
 
+import os
+
+logo_path = "assets/vtulogo.png"
+
+st.write("Current Directory:", os.getcwd())
+st.write("Logo Exists:", os.path.exists(logo_path))
+
 # -----------------------------
 # Configuration
 # -----------------------------
