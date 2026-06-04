@@ -43,7 +43,7 @@ df = load_data()
 # -----------------------------
 # Logo Handling
 # -----------------------------
-logo_path = "assets/logo.png"
+logo_path = "assets/vtulogo.png"
 
 # Sidebar
 if os.path.exists(logo_path):
