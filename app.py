@@ -46,15 +46,6 @@ df = load_data()
 # -----------------------------
 logo_path = "assets/vtulogo.png"
 
-# Sidebar
-if os.path.exists(logo_path):
-    try:
-        pass
-        print("hello")
-       # st.sidebar.image(logo_path, width=180)
-    except Exception:
-        st.sidebar.markdown("### 🚀 Startup Analytics Dashboard")
-
 # Sidebar Navigation
 st.sidebar.title("Navigation")
 
