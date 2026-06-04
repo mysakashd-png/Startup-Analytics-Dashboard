@@ -7,7 +7,6 @@ from utils.charts import (
     regional_distribution
 )
 
-import os
 
 logo_path = "assets/vtulogo.png"
 
