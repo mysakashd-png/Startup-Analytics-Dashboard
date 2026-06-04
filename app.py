@@ -49,7 +49,7 @@ logo_path = "assets/vtulogo.png"
 # Sidebar
 if os.path.exists(logo_path):
     try:
-        st.sidebar.image(logo_path, width=180)
+        st.sidebar.image(logo_path, width=880)
     except Exception:
         st.sidebar.markdown("### 🚀 Startup Analytics Dashboard")
 
